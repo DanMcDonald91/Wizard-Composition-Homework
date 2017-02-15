@@ -6,11 +6,13 @@ public class WizardTest {
 
   Wizard wizard;
   Broomstick broomstick;
+  Dragon dragon;
+  Ogre ogre;
 
   @Before
   public void before(){
     broomstick = new Broomstick("Nimbus", 10);
-    wizard = new Wizard("Toby", broomstick);
+    wizard = new Wizard("Toby", broomstick, dragon);
   }
 
   @Test
@@ -32,13 +34,13 @@ public class WizardTest {
   @Test
   public void canFlyDragon(){
     Dragon dragon = new Dragon("Smaug");
-    wizard = new Wizard ("Ricully",dragon);
+    wizard = new Wizard ("Ricully",dragon, dragon);
     assertEquals("Standing up tall, beating wings, lift off!", wizard.fly());
   }
   @Test
   public void canFlyMagicCarpet(){
     MagicCarpet magiccarpet =new MagicCarpet("codeclan");
-    wizard = new Wizard ("Gandalf", magiccarpet);
+    wizard = new Wizard ("Gandalf", magiccarpet, dragon);
     assertEquals("Hovering up, straightening out, flying off!", wizard.fly());
   }
 
@@ -49,11 +51,11 @@ public class WizardTest {
     assertEquals("Standing up tall, beating wings, lift off!", wizard.fly());
 
   }
-  // @Test
-  // public void canSetGuarder(){
-  //   Dragon dragon = new Dragon("Java The Jaded");
-  //   wizard.setGuard(dragon);
-  //   assertEquals("YOU SHALL CAUSE NO HARM HERE", wizard.guard());
-  // }
+  @Test
+  public void setGuard(){
+    Dragon dragon = new Dragon("Java The Jaded");
+    wizard.setGuard(dragon);
+    assertEquals("Fire wall", wizard.defend());
+  }
 
 }

@@ -1,14 +1,17 @@
 package wizard_management;
 import behaviours.Flyable;
+import behaviours.Guardable;
 
 public class Wizard {
   String name;
   private Flyable ride;
+  private Guardable guard;
 
 
-  public Wizard(String name, Flyable ride){
+  public Wizard(String name, Flyable ride, Guardable guard){
     this.name = name;
     this.ride = ride;
+    this.guard =guard;
   }
 
   public String getName(){
@@ -27,4 +30,10 @@ public class Wizard {
     this.ride = ride;
   }
 
+  public void setGuard(Guardable guard) {
+   this.guard = guard;
+ }
+ public String defend(){
+  return guard.guard();
+ }
 }
