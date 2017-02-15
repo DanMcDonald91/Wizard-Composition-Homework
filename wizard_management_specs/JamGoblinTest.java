@@ -15,4 +15,9 @@ public class JamGoblinTest {
   public void hasName(){
     assertEquals("The Red King", jamgoblin.getName());
   }
+
+  @Test
+  public void GoblinAttack() {
+    assertEquals("Marmalade Mist!", jamgoblin.attack());
+  }
 }
