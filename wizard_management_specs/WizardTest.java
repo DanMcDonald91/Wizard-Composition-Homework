@@ -57,5 +57,11 @@ public class WizardTest {
     wizard.setGuard(dragon);
     assertEquals("Fire wall", wizard.defend());
   }
+  @Test
+  public void setNewGuard(){
+    Ogre ogre = new Ogre("Shrek");
+    wizard.setGuard(ogre);
+    assertEquals("Shrek Smash", wizard.defend());
+  }
 
 }
